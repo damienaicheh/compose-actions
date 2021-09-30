@@ -2,7 +2,7 @@ inputs:
   name:
     description: 'Name'
     required: true
-  flutter-version:
+  android-version:
     description: 'flutter version'
     required: true
     
@@ -17,25 +17,5 @@ runs:
     shell: bash
 
   - run: |
-      echo ${{ inputs.flutter-version }}
+      echo ${{ inputs.android-version }}
     shell: bash
- 
-  - name: Setup Java to compile Android project
-    uses: actions/setup-java@v1
-    with:
-      java-version: '12.x'
-
-  # - name: Create the Keystore
-  #   env:
-  #     KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-  #   run: |
-  #     # import keystore from secrets
-  #     echo $KEYSTORE_BASE64 | base64 -d > $RUNNER_TEMP/my_production.keystore
-
-  # - name: Set Flutter version
-  #   uses: subosito/flutter-action@v1.4.0
-  #   with:
-  #     flutter-version: ${{ inputs.flutter-version }}
-
-  # - name: Restore packages
-  #   run: flutter pub get
