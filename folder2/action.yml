@@ -1,0 +1,21 @@
+inputs:
+  name:
+    description: 'Name'
+    required: true
+  xcode-version:
+    description: 'flutter version'
+    required: true
+    
+
+name: "Version actions"
+description: "Checks out the repository and does something"
+runs:
+  using: "composite"
+  steps: 
+  - run: |
+      echo ${{ inputs.name }}
+    shell: bash
+  - run: |
+      echo ${{ inputs.xcode-version }}
+    shell: bash
+ 
